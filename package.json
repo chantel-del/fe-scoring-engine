@@ -1,0 +1,10 @@
+{
+  "name": "fe-fdd-scoring-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Franchise Empire — Ultimate Franchise Scoring Engine backend (Vercel serverless)",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node test/scoring.test.js"
+  }
+}
