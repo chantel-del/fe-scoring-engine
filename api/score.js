@@ -31,9 +31,10 @@ module.exports = async function handler(req, res) {
     if (!name || name.trim().length < 2) {
       return res.status(400).json({ error: "Name is required." });
     }
-    const hasText =
-      (items.item6 || items.item7 || items.item19 || items.item20 || fullText || "").length > 500;
-    if (!hasText) {
+    const combinedText = [items.item6, items.item7, items.item19, items.item20, fullText]
+      .filter(Boolean)
+      .join("");
+    if (combinedText.length < 500) {
       return res.status(400).json({
         error:
           "We couldn't read enough text from that PDF. It may be a scanned document — please upload a digital FDD."
